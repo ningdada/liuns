@@ -11,7 +11,7 @@ public interface IRegisterCenter4Provider {
     /**
      * 服务端将服务提供者信息注册到ZK对应的节点下
      */
-    public void registerProvider(final List<ProviderService> serviceMetaData);
+    void registerProvider(final List<ProviderService> serviceMetaData);
 
     /**
      * 服务端获取服务提供者信息
@@ -20,5 +20,5 @@ public interface IRegisterCenter4Provider {
      *
      * @return
      */
-    public Map<String, List<ProviderService>> getProviderServiceMap();
+    Map<String, List<ProviderService>> getProviderServiceMap();
 }

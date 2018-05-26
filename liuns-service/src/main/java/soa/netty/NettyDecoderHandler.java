@@ -1,4 +1,4 @@
-package soa;
+package soa.netty;
 
 import business.serializer.SerializeType;
 import business.serializer.SerializerEngine;

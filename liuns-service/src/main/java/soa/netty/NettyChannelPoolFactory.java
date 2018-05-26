@@ -1,4 +1,4 @@
-package soa;
+package soa.netty;
 
 import business.serializer.SerializeType;
 import com.google.common.collect.Lists;
@@ -12,6 +12,7 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 import org.apache.commons.collections4.CollectionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import soa.*;
 
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;

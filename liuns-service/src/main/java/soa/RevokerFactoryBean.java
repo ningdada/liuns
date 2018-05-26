@@ -3,6 +3,7 @@ package soa;
 import org.apache.commons.collections4.MapUtils;
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.beans.factory.InitializingBean;
+import soa.netty.NettyChannelPoolFactory;
 
 import java.util.List;
 import java.util.Map;

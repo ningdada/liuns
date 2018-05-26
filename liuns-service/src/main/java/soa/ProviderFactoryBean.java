@@ -3,12 +3,13 @@ package soa;
 import com.google.common.collect.Lists;
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.beans.factory.InitializingBean;
+import soa.netty.NettyClient;
 
 import java.lang.reflect.Method;
 import java.util.List;
 
 /**
- * 远程服务发布
+ * 远程服务发布，SOA启动入口
  * <p />
  * 1. 启动Netty服务端 <br />
  * 2. 启动ZK服务端，将服务提供者属性信息注册到服务注册中心
@@ -75,7 +76,7 @@ public class ProviderFactoryBean implements FactoryBean, InitializingBean {
      */
     public void afterPropertiesSet() throws Exception {
         // 启动Netty服务端
-        NettyServer.singletion().start(Integer.parseInt(serverPort));
+        NettyClient.NettyServer.singletion().start(Integer.parseInt(serverPort));
 
         // 注册到zookeeper，元数据注册中心
         List<ProviderService> providerServiceList = buildProviderServiceInfos();

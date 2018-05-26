@@ -10,9 +10,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>web</artifactId>
-    <packaging>war</packaging>
 
-    <name>web Maven Webapp</name>
+    <!--<name>web Maven Webapp</name>-->
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 

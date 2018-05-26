@@ -16,6 +16,7 @@
         <module>liuns-service</module>
         <module>liuns-client</module>
         <module>liuns-utils</module>
+        <module>liuns-demo</module>
     </modules>
 
     <properties>
