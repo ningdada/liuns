@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.AddressDao">
+
+    <!-- mybatis公用 -->
+
+    <resultMap id="baseResultMap" type="model.common.po.BasePO">
+        <result property="id" column="id" jdbcType="BIGINT" />
+        <result property="isDeleted" column="is_deleted" jdbcType="BIGINT" />
+        <result property="createUserId" column="create_user_id" jdbcType="BIGINT" />
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP" />
+        <result property="lastUpdateUserId" column="last_update_user_id" jdbcType="BIGINT" />
+        <result property="lastUpdateTime" column="last_update_time" jdbcType="TIMESTAMP" />
+        <result property="serverIp" column="server_ip" jdbcType="VARCHAR" />
+        <result property="versionNo" column="version_no" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <sql id="baseSql">
+        id, is_deleted, create_user_id, create_time, last_update_user_id, last_update_time, server_ip, version_no
+    </sql>
+</mapper>

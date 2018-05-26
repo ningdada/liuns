@@ -1,0 +1,12 @@
+business/UserManage.class
+business/serializer/HessianSerializer.class
+business/serializer/SerializeType.class
+business/impl/AddressManageImpl.class
+business/serializer/ISerializer.class
+business/serializer/SerializerEngine.class
+business/AddressManage.class
+business/serializer/XmlSerializer.class
+business/impl/UserManageImpl.class
+business/serializer/DefaultJavaSerializer.class
+business/serializer/ProtostuffSerializer.class
+business/serializer/JSONSerializer.class

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- SOA服务端提供服务  http方式 -->
+
+    <!-- 还需要在web.xml里面配置过滤器 -->
+    <bean id="httpUrlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="/user.httpInvoker">userHttpService</prop>
+                <prop key="/address.httpInvoker">addressHttpService</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!-- 用户 -->
+    <bean id="userHttpService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+        <property name="service" ref="userService" />
+        <property name="serviceInterface" value="service.UserService" />
+    </bean>
+
+    <!-- 地区 -->
+    <bean id="addressHttpService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+        <property name="service" ref="addressService" />
+        <property name="serviceInterface" value="service.AddressService" />
+    </bean>
+
+</beans>

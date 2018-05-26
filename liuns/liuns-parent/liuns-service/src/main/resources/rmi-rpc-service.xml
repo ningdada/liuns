@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- SOA服务端提供服务 rmi方式 -->
+
+    <!-- 用户 -->
+    <bean class="org.springframework.remoting.rmi.RmiServiceExporter">
+        <!-- 这里的服务名必须和客户端调用协议 rmi://hostname:1199/xxxx的xxxx相同 -->
+        <property name="serviceName" value="userRmiService" />
+        <property name="service" ref="userService" />
+        <property name="serviceInterface" value="service.UserService" />
+        <!-- 默认端口号 -->
+        <property name="registryPort" value="1199" />
+    </bean>
+
+    <!-- 地区 -->
+    <bean class="org.springframework.remoting.rmi.RmiServiceExporter">
+        <property name="serviceName" value="addressRmiService" />
+        <property name="service" ref="addressService" />
+        <property name="serviceInterface" value="service.AddressService" />
+        <property name="registryPort" value="1199" />
+    </bean>
+
+</beans>

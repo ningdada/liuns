@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- SOA服务端提供服务 Hessian协议 -->
+
+    <bean id="hessianUrlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="/user.hessianInvoker">userHessianService</prop>
+                <prop key="/address.hessianInvoker">addressHessianService</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!-- 用户 -->
+    <bean id="userHessianService" class="org.springframework.remoting.caucho.HessianServiceExporter">
+        <property name="service" ref="userService" />
+        <property name="serviceInterface" value="service.UserService" />
+    </bean>
+
+    <!-- 地区 -->
+    <bean id="addressHessianService" class="org.springframework.remoting.caucho.HessianServiceExporter">
+        <property name="service" ref="addressService" />
+        <property name="serviceInterface" value="service.AddressService" />
+    </bean>
+
+</beans>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 调用SOA服务的客户端列表 -->
+
+    <!-- 用户 -->
+    <bean class="soa.RevokerFactoryBean" lazy-init="false">
+        <property name="tartgetInterface" value="service.UserService" />
+        <property name="clusterStrategy" value="WeightRandom" />
+        <property name="remoteAppKey" value="liuns" />
+        <property name="groupName" value="default" />
+        <property name="timeout" value="600" />
+    </bean>
+
+    <!-- -->
+    <bean class="soa.RevokerFactoryBean" lazy-init="false">
+        <property name="tartgetInterface" value="service.AddressService" />
+        <property name="clusterStrategy" value="WeightRandom" />
+        <property name="remoteAppKey" value="liuns" />
+        <property name="groupName" value="default" />
+        <property name="timeout" value="600" />
+    </bean>
+
+</beans>
