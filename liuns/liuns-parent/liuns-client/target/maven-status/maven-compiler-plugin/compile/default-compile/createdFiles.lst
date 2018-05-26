@@ -1,8 +1,0 @@
-client/http/UserClient.class
-client/rmi/UserClient.class
-client/hessian/UserClient.class
-client/hessian/AddressClient.class
-client/serviceInterface/UserService.class
-client/rmi/AddressClient.class
-client/http/AddressClient.class
-client/serviceInterface/AddressService.class
