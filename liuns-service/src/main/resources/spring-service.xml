@@ -7,21 +7,21 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <import resource="spring-business.xml" />
+    <import resource="spring-liuns.business.xml" />
 
     <!--
-    <import resource="rmi-rpc-service.xml" />
+    <import resource="rmi-rpc-liuns.remoting.framework.liuns.service.xml" />
 
-    <import resource="http-rpc-service.xml" />
+    <import resource="http-rpc-liuns.remoting.framework.liuns.service.xml" />
 
-    <import resource="hessian-rpc-service.xml" />
+    <import resource="hessian-rpc-liuns.remoting.framework.liuns.service.xml" />
 
 
-    <import resource="soa-service-provider.xml" />
+    <import resource="soa-liuns.remoting.framework.liuns.service-provider.xml" />
 
-    <import resource="soa-service-invoker.xml" />
+    <import resource="soa-liuns.remoting.framework.liuns.service-invoker.xml" />
 -->
-    <context:component-scan base-package="service" />
+    <context:component-scan base-package="liuns.remoting.framework.service" />
 
 
 </beans>

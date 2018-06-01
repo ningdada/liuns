@@ -17,14 +17,14 @@
 
     <!-- 用户 -->
     <bean id="userHessianService" class="org.springframework.remoting.caucho.HessianServiceExporter">
-        <property name="service" ref="userService" />
-        <property name="serviceInterface" value="service.UserService" />
+        <property name="liuns.remoting.framework.service" ref="userService" />
+        <property name="serviceInterface" value="liuns.remoting.framework.service.UserService" />
     </bean>
 
     <!-- 地区 -->
     <bean id="addressHessianService" class="org.springframework.remoting.caucho.HessianServiceExporter">
-        <property name="service" ref="addressService" />
-        <property name="serviceInterface" value="service.AddressService" />
+        <property name="liuns.remoting.framework.service" ref="addressService" />
+        <property name="serviceInterface" value="liuns.remoting.framework.service.AddressService" />
     </bean>
 
 </beans>

@@ -2,16 +2,16 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="dao.AddressDao">
+<mapper namespace="liuns.dao.AddressDao">
 
-    <resultMap id="addressResultMap" type="model.business.po.AddressPO" extends="baseResultMap">
+    <resultMap id="addressResultMap" type="model.liuns.business.po.AddressPO" extends="baseResultMap">
         <result property="parentId" column="parent_id" jdbcType="BIGINT" />
         <result property="addressCode" column="address_code" jdbcType="VARCHAR" />
         <result property="addressName" column="address_name" jdbcType="VARCHAR" />
     </resultMap>
     
     <!-- 新增用户 -->
-    <insert id="insert" parameterType="model.business.po.AddressPO">
+    <insert id="insert" parameterType="model.liuns.business.po.AddressPO">
         insert into address
         (id, parent_id, address_code, address_name, is_deleted, create_user_id, create_time, last_update_user_id, last_update_time, server_ip, version_no)
           values
@@ -19,7 +19,7 @@
     </insert>
 
     <!-- 根据id更新用户 -->
-    <update id="update" parameterType="model.business.po.AddressPO">
+    <update id="update" parameterType="model.liuns.business.po.AddressPO">
         update address set id = #{id}
         <if test="parentId != null">
             ,parent_id = #{parentId}

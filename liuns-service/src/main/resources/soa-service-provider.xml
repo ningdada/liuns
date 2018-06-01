@@ -8,9 +8,9 @@
 
     <!-- 用户 -->
     <bean class="soa.ProviderFactoryBean" lazy-init="false">
-        <property name="serviceItf" value="service.UserService" />
+        <property name="serviceItf" value="liuns.remoting.framework.liuns.service.UserService" />
         <property name="serviceObject">
-            <bean class="service.impl.UserServiceImpl" />
+            <bean class="liuns.remoting.framework.service.impl.UserServiceImpl" />
         </property>
         <property name="appKey" value="liuns-default-user" />
         <property name="weight" value="1" />
@@ -22,9 +22,9 @@
 
     <!-- -->
     <bean class="soa.ProviderFactoryBean" lazy-init="false">
-        <property name="serviceItf" value="service.AddressService" />
+        <property name="serviceItf" value="liuns.remoting.framework.liuns.service.AddressService" />
         <property name="serviceObject">
-            <bean class="service.impl.AddressServiceImpl" />
+            <bean class="liuns.remoting.framework.service.impl.AddressServiceImpl" />
         </property>
         <property name="appKey" value="iuns-default-address" />
         <property name="weight" value="1" />

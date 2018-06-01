@@ -9,8 +9,8 @@
     <bean class="org.springframework.remoting.rmi.RmiServiceExporter">
         <!-- 这里的服务名必须和客户端调用协议 rmi://hostname:1199/xxxx的xxxx相同 -->
         <property name="serviceName" value="userRmiService" />
-        <property name="service" ref="userService" />
-        <property name="serviceInterface" value="service.UserService" />
+        <property name="liuns.remoting.framework.service" ref="userService" />
+        <property name="serviceInterface" value="liuns.remoting.framework.service.UserService" />
         <!-- 默认端口号 -->
         <property name="registryPort" value="1199" />
     </bean>
@@ -18,8 +18,8 @@
     <!-- 地区 -->
     <bean class="org.springframework.remoting.rmi.RmiServiceExporter">
         <property name="serviceName" value="addressRmiService" />
-        <property name="service" ref="addressService" />
-        <property name="serviceInterface" value="service.AddressService" />
+        <property name="liuns.remoting.framework.service" ref="addressService" />
+        <property name="serviceInterface" value="liuns.remoting.framework.service.AddressService" />
         <property name="registryPort" value="1199" />
     </bean>
 

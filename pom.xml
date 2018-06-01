@@ -12,10 +12,11 @@
         <module>liuns-model</module>
         <module>liuns-dao</module>
         <module>liuns-business</module>
-        <module>liuns-web</module>
         <module>liuns-service</module>
+        <module>liuns-web</module>
         <module>liuns-client</module>
         <module>liuns-utils</module>
+        <module>liuns-soa</module>
         <module>liuns-demo</module>
     </modules>
 

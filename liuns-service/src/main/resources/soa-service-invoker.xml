@@ -8,7 +8,7 @@
 
     <!-- 用户 -->
     <bean class="soa.RevokerFactoryBean" lazy-init="false">
-        <property name="tartgetInterface" value="service.UserService" />
+        <property name="tartgetInterface" value="liuns.remoting.framework.liuns.service.UserService" />
         <property name="clusterStrategy" value="WeightRandom" />
         <property name="remoteAppKey" value="liuns" />
         <property name="groupName" value="default" />
@@ -17,7 +17,7 @@
 
     <!-- -->
     <bean class="soa.RevokerFactoryBean" lazy-init="false">
-        <property name="tartgetInterface" value="service.AddressService" />
+        <property name="tartgetInterface" value="liuns.remoting.framework.liuns.service.AddressService" />
         <property name="clusterStrategy" value="WeightRandom" />
         <property name="remoteAppKey" value="liuns" />
         <property name="groupName" value="default" />
