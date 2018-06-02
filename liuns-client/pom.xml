@@ -22,7 +22,7 @@
         <!-- module -->
         <dependency>
             <groupId>com.ndd</groupId>
-            <artifactId>model</artifactId>
+            <artifactId>liuns-model</artifactId>
             <version>${module.version}</version>
         </dependency>
 

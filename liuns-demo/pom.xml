@@ -20,7 +20,7 @@
 
         <dependency>
             <groupId>com.ndd</groupId>
-            <artifactId>model</artifactId>
+            <artifactId>liuns-model</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 

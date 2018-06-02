@@ -7,10 +7,10 @@
     <!-- 提供SOA服务的服务端列表 -->
 
     <!-- 用户 -->
-    <bean class="soa.ProviderFactoryBean" lazy-init="false">
-        <property name="serviceItf" value="liuns.remoting.framework.liuns.service.UserService" />
+    <bean class="liuns.remoting.framework.provider.ProviderFactoryBean" lazy-init="false">
+        <property name="serviceItf" value="liuns.service.UserService" />
         <property name="serviceObject">
-            <bean class="liuns.remoting.framework.service.impl.UserServiceImpl" />
+            <bean class="liuns.service.impl.UserServiceImpl" />
         </property>
         <property name="appKey" value="liuns-default-user" />
         <property name="weight" value="1" />
@@ -21,12 +21,12 @@
     </bean>
 
     <!-- -->
-    <bean class="soa.ProviderFactoryBean" lazy-init="false">
-        <property name="serviceItf" value="liuns.remoting.framework.liuns.service.AddressService" />
+    <bean class="liuns.remoting.framework.provider.ProviderFactoryBean" lazy-init="false">
+        <property name="serviceItf" value="liuns.service.AddressService" />
         <property name="serviceObject">
-            <bean class="liuns.remoting.framework.service.impl.AddressServiceImpl" />
+            <bean class="liuns.service.impl.AddressServiceImpl" />
         </property>
-        <property name="appKey" value="iuns-default-address" />
+        <property name="appKey" value="liuns-default-address" />
         <property name="weight" value="1" />
         <property name="groupName" value="default" />
         <property name="workerThreads" value="10" />

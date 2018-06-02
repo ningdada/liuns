@@ -7,7 +7,7 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <import resource="spring-business.xml" />
+    <import resource="classpath:spring-business.xml" />
 
     <!--
     <import resource="rmi-rpc-liuns.remoting.framework.liuns.service.xml" />
@@ -16,11 +16,12 @@
 
     <import resource="hessian-rpc-liuns.remoting.framework.liuns.service.xml" />
 
-
-    <import resource="soa-liuns.remoting.framework.liuns.service-provider.xml" />
-
     <import resource="soa-liuns.remoting.framework.liuns.service-invoker.xml" />
 -->
+    <import resource="soa-service-provider.xml" />
+
+
+
     <context:component-scan base-package="liuns.service" />
 
 

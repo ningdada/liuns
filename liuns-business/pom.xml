@@ -19,12 +19,12 @@
         <!-- module -->
         <dependency>
             <groupId>com.ndd</groupId>
-            <artifactId>dao</artifactId>
+            <artifactId>liuns-dao</artifactId>
             <version>${module.version}</version>
         </dependency>
         <dependency>
             <groupId>com.ndd</groupId>
-            <artifactId>utils</artifactId>
+            <artifactId>liuns-utils</artifactId>
             <version>${module.version}</version>
         </dependency>
 

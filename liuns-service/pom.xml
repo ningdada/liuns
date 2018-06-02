@@ -20,12 +20,17 @@
         <!-- module -->
         <dependency>
             <groupId>com.ndd</groupId>
-            <artifactId>business</artifactId>
+            <artifactId>liuns-business</artifactId>
             <version>${module.version}</version>
         </dependency>
         <dependency>
             <groupId>com.ndd</groupId>
-            <artifactId>model</artifactId>
+            <artifactId>liuns-model</artifactId>
+            <version>${module.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ndd</groupId>
+            <artifactId>liuns-soa</artifactId>
             <version>${module.version}</version>
         </dependency>
 
