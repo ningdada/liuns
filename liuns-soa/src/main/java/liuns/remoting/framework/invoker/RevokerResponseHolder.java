@@ -1,6 +1,8 @@
-package liuns.remoting.framework.soa;
+package liuns.remoting.framework.invoker;
 
 import com.google.common.collect.Maps;
+import liuns.remoting.framework.model.SOAResponse;
+import liuns.remoting.framework.model.SOAResponseWrapper;
 
 import java.util.Map;
 import java.util.concurrent.ExecutorService;

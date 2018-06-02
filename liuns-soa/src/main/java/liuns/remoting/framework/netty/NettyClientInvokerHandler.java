@@ -1,9 +1,9 @@
-package liuns.remoting.framework.soa.netty;
+package liuns.remoting.framework.netty;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
-import liuns.remoting.framework.soa.RevokerResponseHolder;
-import liuns.remoting.framework.soa.SOAResponse;
+import liuns.remoting.framework.invoker.RevokerResponseHolder;
+import liuns.remoting.framework.model.SOAResponse;
 
 public class NettyClientInvokerHandler extends SimpleChannelInboundHandler<SOAResponse> {
 

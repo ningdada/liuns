@@ -5,7 +5,7 @@
 <mapper namespace="liuns.dao.UserDao">
 
     <!-- 新增用户 -->
-    <insert id="insert" parameterType="model.liuns.business.po.UserPO">
+    <insert id="insert" parameterType="liuns.model.business.po.UserPO">
         insert into user
         (id, username, pwd, is_deleted, create_user_id, create_time, last_update_user_id, last_update_time, server_ip, version_no)
           values
@@ -13,7 +13,7 @@
     </insert>
 
     <!-- 根据id更新用户 -->
-    <update id="update" parameterType="model.liuns.business.po.UserPO">
+    <update id="update" parameterType="liuns.model.business.po.UserPO">
         update user set id = #{id}
         <if test="username != null and username.length > 0">
             ,username = #{username}
@@ -34,12 +34,12 @@
     </update>
 
     <!-- 根据用户id获取用户 -->
-    <select id="get" parameterType="java.lang.Long" resultType="model.liuns.business.po.UserPO">
+    <select id="get" parameterType="java.lang.Long" resultType="liuns.model.business.po.UserPO">
         select * from user where id = #{id} and is_deleted = 0
     </select>
 
     <!-- 根据用户名查询用户信息 -->
-    <select id="selectBy" parameterType="model.liuns.business.po.UserPO" resultType="model.liuns.business.po.UserPO">
+    <select id="selectBy" parameterType="liuns.model.business.po.UserPO" resultType="liuns.model.business.po.UserPO">
         select * from user where is_deleted = 0
         <if test="username != null">
             and username = #{username}

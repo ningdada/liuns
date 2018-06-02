@@ -1,4 +1,4 @@
-package liuns.remoting.framework.soa;
+package liuns.remoting.framework.model;
 
 /**
  * SOA请求包装类

@@ -1,11 +1,15 @@
-package liuns.remoting.framework.soa.netty;
+package liuns.remoting.framework.netty;
 
 import com.google.common.base.Predicate;
 import com.google.common.collect.Collections2;
 import com.google.common.collect.Maps;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
-import liuns.remoting.framework.soa.*;
+import liuns.remoting.framework.RegisterCenter;
+import liuns.remoting.framework.model.SOARequest;
+import liuns.remoting.framework.model.SOAResponse;
+import liuns.remoting.framework.provider.IRegisterCenter4Provider;
+import liuns.remoting.framework.model.ProviderService;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

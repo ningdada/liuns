@@ -1,8 +1,11 @@
-package liuns.remoting.framework.soa;
+package liuns.remoting.framework.loadBalance;
 
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
-import liuns.remoting.framework.soa.netty.NettyChannelPoolFactory;
+import liuns.remoting.framework.invoker.RevokerResponseHolder;
+import liuns.remoting.framework.model.SOARequest;
+import liuns.remoting.framework.model.SOAResponse;
+import liuns.remoting.framework.netty.NettyChannelPoolFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,6 +14,9 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 服务调用，并返回调用结果
+ */
 public class RevokerServiceCallable implements Callable<SOAResponse> {
 
     private static final Logger log = LoggerFactory.getLogger(RevokerServiceCallable.class);

@@ -1,9 +1,15 @@
-package liuns.remoting.framework.soa;
+package liuns.remoting.framework;
 
 import com.alibaba.fastjson.JSON;
 import com.google.common.base.Function;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import liuns.remoting.framework.helper.IPHelper;
+import liuns.remoting.framework.helper.PropertyConfigHelper;
+import liuns.remoting.framework.invoker.IRegisterCenter4Invoker;
+import liuns.remoting.framework.model.InvokerService;
+import liuns.remoting.framework.provider.IRegisterCenter4Provider;
+import liuns.remoting.framework.model.ProviderService;
 import org.I0Itec.zkclient.IZkChildListener;
 import org.I0Itec.zkclient.ZkClient;
 import org.I0Itec.zkclient.serialize.SerializableSerializer;
@@ -17,6 +23,9 @@ import java.util.Map;
 
 /**
  * 服务注册中心
+ * <p />
+ * 客户端和服务端通过这个类将服务注册到注册中心上 <br />
+ * 客户端通过ZK监听机制即使更新注册中心上的服务节点信息 <br />
  */
 public class RegisterCenter implements IRegisterCenter4Provider, IRegisterCenter4Invoker {
 

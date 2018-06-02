@@ -1,7 +1,10 @@
-package liuns.remoting.framework.soa;
+package liuns.remoting.framework.loadBalance;
 
-import liuns.remoting.framework.loadBalance.ClusterEngine;
-import liuns.remoting.framework.loadBalance.ClusterStrastegy;
+import liuns.remoting.framework.invoker.IRegisterCenter4Invoker;
+import liuns.remoting.framework.model.SOARequest;
+import liuns.remoting.framework.model.SOAResponse;
+import liuns.remoting.framework.model.ProviderService;
+import liuns.remoting.framework.RegisterCenter;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -11,6 +14,9 @@ import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.*;
 
+/**
+ * 提供服务软负载
+ */
 public class RevokerProxyBeanFactory implements InvocationHandler {
 
     private ExecutorService fixedThreadPool = null;

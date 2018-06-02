@@ -1,4 +1,4 @@
-package liuns.remoting.framework.soa.netty;
+package liuns.remoting.framework.netty;
 
 import liuns.remoting.framework.serializer.SerializeType;
 import liuns.remoting.framework.serializer.SerializerEngine;

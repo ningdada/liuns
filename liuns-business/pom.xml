@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>business</artifactId>
+    <artifactId>liuns-business</artifactId>
 
     <properties>
         <module.version>1.0-SNAPSHOT</module.version>

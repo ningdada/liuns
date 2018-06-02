@@ -1,4 +1,7 @@
-package liuns.remoting.framework.soa;
+package liuns.remoting.framework.invoker;
+
+import liuns.remoting.framework.model.InvokerService;
+import liuns.remoting.framework.model.ProviderService;
 
 import java.util.List;
 import java.util.Map;

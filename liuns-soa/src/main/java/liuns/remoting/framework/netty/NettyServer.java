@@ -1,4 +1,4 @@
-package liuns.remoting.framework.soa.netty;
+package liuns.remoting.framework.netty;
 
 import liuns.remoting.framework.serializer.SerializeType;
 import io.netty.bootstrap.ServerBootstrap;
@@ -10,7 +10,7 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
-import liuns.remoting.framework.soa.SOAResponse;
+import liuns.remoting.framework.model.SOAResponse;
 
 /**
  * Netty Server

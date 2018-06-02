@@ -1,7 +1,7 @@
 package liuns.remoting.framework.loadBalance;
 
 import com.google.common.collect.Lists;
-import liuns.remoting.framework.soa.ProviderService;
+import liuns.remoting.framework.model.ProviderService;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;

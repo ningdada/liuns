@@ -1,4 +1,4 @@
-package liuns.remoting.framework.soa.netty;
+package liuns.remoting.framework.netty;
 
 import liuns.remoting.framework.serializer.SerializeType;
 import com.google.common.collect.Lists;
@@ -9,9 +9,9 @@ import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
-import liuns.remoting.framework.soa.PropertyConfigHelper;
-import liuns.remoting.framework.soa.ProviderService;
-import liuns.remoting.framework.soa.SOAResponse;
+import liuns.remoting.framework.helper.PropertyConfigHelper;
+import liuns.remoting.framework.model.ProviderService;
+import liuns.remoting.framework.model.SOAResponse;
 import org.apache.commons.collections4.CollectionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

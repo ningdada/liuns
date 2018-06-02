@@ -1,4 +1,4 @@
-package liuns.remoting.framework.soa;
+package liuns.remoting.framework.model;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;

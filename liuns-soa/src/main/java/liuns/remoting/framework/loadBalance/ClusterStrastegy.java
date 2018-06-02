@@ -1,7 +1,7 @@
 package liuns.remoting.framework.loadBalance;
 
 
-import liuns.remoting.framework.soa.ProviderService;
+import liuns.remoting.framework.model.ProviderService;
 
 import java.util.List;
 

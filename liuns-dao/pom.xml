@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>dao</artifactId>
+    <artifactId>liuns-dao</artifactId>
     <properties>
         <module.version>1.0-SNAPSHOT</module.version>
         <mysql.connector.version>5.1.46</mysql.connector.version>

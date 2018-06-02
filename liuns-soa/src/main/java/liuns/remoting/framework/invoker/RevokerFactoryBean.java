@@ -1,6 +1,10 @@
-package liuns.remoting.framework.soa;
+package liuns.remoting.framework.invoker;
 
-import liuns.remoting.framework.soa.netty.NettyChannelPoolFactory;
+import liuns.remoting.framework.loadBalance.RevokerProxyBeanFactory;
+import liuns.remoting.framework.model.InvokerService;
+import liuns.remoting.framework.model.ProviderService;
+import liuns.remoting.framework.RegisterCenter;
+import liuns.remoting.framework.netty.NettyChannelPoolFactory;
 import org.apache.commons.collections4.MapUtils;
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.beans.factory.InitializingBean;
@@ -11,7 +15,7 @@ import java.util.Map;
 /**
  * 远程服务的引入
  * <p />
- * 1. 通过注册中心,将服务提供者信息获取到本地缓存列表 <br />
+ * 1. 通过注册中心,将服务提供者信息拉取到本地缓存列表 <br />
  * 2. 初始化Netty连接池 <br />
  * 3. 获取服务提供者代理对象 <br />
  * 4. 将服务消费者信息注册到注册中心 <br />
@@ -71,7 +75,7 @@ public class RevokerFactoryBean implements FactoryBean, InitializingBean {
         // 初始化Netty Channel
         Map<String, List<ProviderService>> providerMap = registerCenter4Consumer.getServiceMetaDataMap4Consume();
         if (MapUtils.isEmpty(providerMap)) {
-            throw new RuntimeException("liuns.remoting.framework.liuns.service provider list is empty.");
+            throw new RuntimeException("service provider list is empty.");
         }
 
         // 初始化Netty Channel连接队列

@@ -6,7 +6,7 @@
 
     <!-- mybatis公用 -->
 
-    <resultMap id="baseResultMap" type="model.common.po.BasePO">
+    <resultMap id="baseResultMap" type="liuns.model.common.po.BasePO">
         <result property="id" column="id" jdbcType="BIGINT" />
         <result property="isDeleted" column="is_deleted" jdbcType="BIGINT" />
         <result property="createUserId" column="create_user_id" jdbcType="BIGINT" />
