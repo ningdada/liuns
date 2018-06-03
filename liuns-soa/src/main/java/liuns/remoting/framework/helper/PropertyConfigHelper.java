@@ -5,19 +5,19 @@ import liuns.remoting.framework.serializer.SerializeType;
 public class PropertyConfigHelper {
 
     public static String getZkService() {
-        return "127.0.0.1";
+        return "127.0.0.1:2181";
     }
 
     public static int getZkConnectionTimeout() {
-        return 10000;
+        return 1000;
     }
 
     public static int getZkSessionTimeout() {
-        return 60000;
+        return 1000;
     }
 
     public static int getChannelConnectSize() {
-        return 10;
+        return 15;
     }
 
     public static SerializeType getSerializeType() {

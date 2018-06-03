@@ -1,11 +1,11 @@
 package liuns.service.impl;
 
 import liuns.business.AddressManage;
-import liuns.model.business.dto.AddressDTO;
+import liuns.interfacer.AddressService;
+import liuns.interfacer.model.business.AddressDTO;
+import liuns.interfacer.model.common.RequestDTO;
+import liuns.interfacer.model.common.ResponseDTO;
 import liuns.model.business.po.AddressPO;
-import liuns.model.common.dto.RequestDTO;
-import liuns.model.common.dto.ResponseDTO;
-import liuns.service.AddressService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

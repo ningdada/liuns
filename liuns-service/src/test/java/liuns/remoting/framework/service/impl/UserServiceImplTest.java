@@ -1,10 +1,10 @@
 package liuns.remoting.framework.service.impl;
 
 import com.alibaba.fastjson.JSON;
-import liuns.model.business.dto.UserDTO;
-import liuns.model.common.dto.RequestDTO;
-import liuns.model.common.dto.ResponseDTO;
-import liuns.service.UserService;
+import liuns.interfacer.UserService;
+import liuns.interfacer.model.business.UserDTO;
+import liuns.interfacer.model.common.RequestDTO;
+import liuns.interfacer.model.common.ResponseDTO;
 import org.junit.Test;
 import liuns.remoting.framework.service.BaseTest;
 

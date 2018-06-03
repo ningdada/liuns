@@ -1,5 +1,7 @@
 package liuns.remoting.framework.netty;
 
+import io.netty.channel.ChannelFuture;
+import liuns.remoting.framework.helper.PropertyConfigHelper;
 import liuns.remoting.framework.serializer.SerializeType;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelInitializer;
@@ -26,16 +28,16 @@ public class NettyServer {
     private EventLoopGroup workerGroup;
 
     // 序列化类型配置信息
-    private SerializeType serializeType;
+    private SerializeType serializeType = PropertyConfigHelper.getSerializeType();
 
     public void start(final int port) {
-        if (bossGroup != null || workerGroup != null) {
-            return ;
-        }
+        synchronized (NettyServer.class) {
+            if (bossGroup != null || workerGroup != null) {
+                return ;
+            }
 
-        bossGroup = new NioEventLoopGroup();
-        workerGroup = new NioEventLoopGroup();
-        try {
+            bossGroup = new NioEventLoopGroup(); // 用于服务器端接受客户端的连接
+            workerGroup = new NioEventLoopGroup(); // 用于网络事件的处理
             ServerBootstrap b = new ServerBootstrap();
             b.group(bossGroup, workerGroup)
                     .channel(NioServerSocketChannel.class)
@@ -55,14 +57,12 @@ public class NettyServer {
                         }
                     });
 
-            b.bind(port).sync();
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        } finally {
-            bossGroup.shutdownGracefully();
-            workerGroup.shutdownGracefully();
+            try {
+                b.bind(port).sync().channel();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
-
     }
 
     public NettyServer() {

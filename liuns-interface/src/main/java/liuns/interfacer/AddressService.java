@@ -1,8 +1,9 @@
-package liuns.service;
+package liuns.interfacer;
 
-import liuns.model.business.dto.AddressDTO;
-import liuns.model.common.dto.RequestDTO;
-import liuns.model.common.dto.ResponseDTO;
+
+import liuns.interfacer.model.business.AddressDTO;
+import liuns.interfacer.model.common.RequestDTO;
+import liuns.interfacer.model.common.ResponseDTO;
 
 public interface AddressService {
 

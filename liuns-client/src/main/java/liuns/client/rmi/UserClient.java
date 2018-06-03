@@ -1,10 +1,10 @@
 package liuns.client.rmi;
 
-import liuns.client.serviceInterface.UserService;
 import com.alibaba.fastjson.JSON;
-import liuns.model.business.dto.UserDTO;
-import liuns.model.common.dto.RequestDTO;
-import liuns.model.common.dto.ResponseDTO;
+import liuns.interfacer.UserService;
+import liuns.interfacer.model.business.UserDTO;
+import liuns.interfacer.model.common.RequestDTO;
+import liuns.interfacer.model.common.ResponseDTO;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

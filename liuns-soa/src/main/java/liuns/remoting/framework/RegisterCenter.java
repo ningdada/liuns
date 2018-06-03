@@ -15,6 +15,8 @@ import org.I0Itec.zkclient.ZkClient;
 import org.I0Itec.zkclient.serialize.SerializableSerializer;
 import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.lang3.ClassUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
@@ -28,6 +30,8 @@ import java.util.Map;
  * 客户端通过ZK监听机制即使更新注册中心上的服务节点信息 <br />
  */
 public class RegisterCenter implements IRegisterCenter4Provider, IRegisterCenter4Invoker {
+
+    private static final Logger log = LoggerFactory.getLogger(RegisterCenter.class);
 
     private static RegisterCenter registerCenter = new RegisterCenter();
 
@@ -92,6 +96,7 @@ public class RegisterCenter implements IRegisterCenter4Provider, IRegisterCenter
         // 连接ZK，注册服务
         synchronized (RegisterCenter.class) {
             if (zkClient == null) {
+                if (log.isDebugEnabled()) log.debug("Connecting Zookeeper.........");
                 zkClient = new ZkClient(ZK_SERVICE, ZK_SESSION_TIME_OUT, ZK_CONNECTION_TIME_OUT, new SerializableSerializer());
             }
             // 创建ZK命名空间/当前部署应用APP命名空间
@@ -147,6 +152,7 @@ public class RegisterCenter implements IRegisterCenter4Provider, IRegisterCenter
             // 创建ZK命名空间/当前部署应用APP命名空间
             boolean exists = zkClient.exists(ROOT_PATH);
             if (!exists) {
+                if (log.isDebugEnabled()) log.debug("Connecting Zookeeper.........");
                 zkClient.createPersistent(ROOT_PATH, true);
             }
             // 创建服务提供者节点
@@ -299,7 +305,7 @@ public class RegisterCenter implements IRegisterCenter4Provider, IRegisterCenter
             currentServiceMetaDataMap.put(serviceItfKey, providerServiceList);
         }
         serviceMetaDataMap4Consume.putAll(currentServiceMetaDataMap);
-        System.out.println("serviceMetaDataMap4Consume:" + JSON.toJSONString(serviceMetaDataMap4Consume));
+        if (log.isDebugEnabled()) log.debug("serviceMetaDataMap4Consume:" + JSON.toJSONString(serviceMetaDataMap4Consume));
     }
 }
 

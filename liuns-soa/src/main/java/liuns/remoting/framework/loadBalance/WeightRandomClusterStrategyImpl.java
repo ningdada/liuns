@@ -17,6 +17,7 @@ public class WeightRandomClusterStrategyImpl implements ClusterStrastegy {
         List<ProviderService> providerServiceList = Lists.newArrayList();
         for (ProviderService providerService : providerServices) {
             Integer weight = providerService.getWeight();
+            if (weight == null) weight = 1;
             for (int i=0; i<weight; i++) {
                 providerServiceList.add(providerService);
             }

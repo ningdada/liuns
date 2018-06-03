@@ -27,7 +27,8 @@ public class SerializerEngine {
      */
     public static <T> byte[] serialize(T obj, SerializeType serializeType) {
         if (serializeType == null) {
-            throw new RuntimeException("serialize is null");
+//            throw new RuntimeException("serialize is null");
+            serializeType = SerializeType.HessianSerialzer;
         }
         ISerializer serializer = serializerMap.get(serializeType);
         if (serializer == null) {
@@ -51,7 +52,8 @@ public class SerializerEngine {
      */
     public static <T> T deserialize(byte[] data, Class<T> clazz, SerializeType serializeType) {
         if (serializeType == null) {
-            throw new RuntimeException("serialize is null");
+//            throw new RuntimeException("serialize is null");
+            serializeType = SerializeType.HessianSerialzer;
         }
         ISerializer serializer = serializerMap.get(serializeType);
         if (serializer == null) {

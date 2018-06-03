@@ -165,7 +165,7 @@ public class NettyChannelPoolFactory {
                             // 注册Netty解码器
                             sc.pipeline().addLast(new NettyDecoderHandler(SOAResponse.class, serializeType));
                             // 注册客户端业务逻辑处理handler
-                            sc.pipeline().addLast(new NettyServerInvokeHandler());
+                            sc.pipeline().addLast(new NettyClientInvokerHandler());
                         }
                     });
 

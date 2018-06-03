@@ -1,9 +1,11 @@
 package liuns.remoting.framework.model;
 
+import java.io.Serializable;
+
 /**
  * SOA请求包装类
  */
-public class SOARequest {
+public class SOARequest implements Serializable {
 
     /**
      * 服务提供者信息

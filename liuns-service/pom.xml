@@ -33,6 +33,11 @@
             <artifactId>liuns-soa</artifactId>
             <version>${module.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.ndd</groupId>
+            <artifactId>liuns-interface</artifactId>
+            <version>${module.version}</version>
+        </dependency>
 
     </dependencies>
 </project>

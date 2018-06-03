@@ -10,11 +10,14 @@ import liuns.remoting.framework.model.SOARequest;
 import liuns.remoting.framework.model.SOAResponse;
 import liuns.remoting.framework.provider.IRegisterCenter4Provider;
 import liuns.remoting.framework.model.ProviderService;
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.Method;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Semaphore;
@@ -37,19 +40,8 @@ public class NettyServerInvokeHandler extends SimpleChannelInboundHandler<SOAReq
 
             // 根据方法名称定位到具体某一个服务提供者
             String serviceKey = metaDataModel.getServiceItf().getName();
-            // 获取限流工具
-            int workerThread = metaDataModel.getWorkerThreads();
-            Semaphore semaphore = serviceKeySermaphoreMap.get(serviceKey);
-            // 初始化流控基础设施semaphore
-            if (semaphore == null) {
-                synchronized (serviceKeySermaphoreMap) {
-                    semaphore = serviceKeySermaphoreMap.get(serviceKey);
-                    if (semaphore == null) {
-                        semaphore = new Semaphore(workerThread);
-                        serviceKeySermaphoreMap.put(serviceKey, semaphore);
-                    }
-                }
-            }
+
+            List<ProviderService> providerServices = RegisterCenter.singleton().getProviderServiceMap().get(serviceKey);
 
             // 获取服务注册中心
             IRegisterCenter4Provider registerCenter4Provider = RegisterCenter.singleton();
@@ -65,7 +57,22 @@ public class NettyServerInvokeHandler extends SimpleChannelInboundHandler<SOAReq
                     return apply(input);
                 }
             }).iterator().next();
+
             Object serviceObject = localProviderCache.getServiceObject();
+
+            // 获取限流工具
+            int workerThread = localProviderCache.getWorkerThreads();
+            Semaphore semaphore = serviceKeySermaphoreMap.get(serviceKey);
+            // 初始化流控基础设施semaphore
+            if (semaphore == null) {
+                synchronized (serviceKeySermaphoreMap) {
+                    semaphore = serviceKeySermaphoreMap.get(serviceKey);
+                    if (semaphore == null) {
+                        semaphore = new Semaphore(workerThread);
+                        serviceKeySermaphoreMap.put(serviceKey, semaphore);
+                    }
+                }
+            }
 
             // 利用反射发起服务调用
             Method method = localProviderCache.getServiceMethod();

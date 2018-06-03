@@ -8,7 +8,7 @@
 
     <!-- 用户 -->
     <bean class="liuns.remoting.framework.provider.ProviderFactoryBean" lazy-init="false">
-        <property name="serviceItf" value="liuns.service.UserService" />
+        <property name="serviceItf" value="liuns.interfacer.UserService" />
         <property name="serviceObject">
             <bean class="liuns.service.impl.UserServiceImpl" />
         </property>
@@ -17,12 +17,12 @@
         <property name="groupName" value="default" />
         <property name="workerThreads" value="10" />
         <property name="serverPort" value="8081" />
-        <property name="timeout" value="3000" />
+        <property name="timeout" value="10000" />
     </bean>
 
     <!-- -->
     <bean class="liuns.remoting.framework.provider.ProviderFactoryBean" lazy-init="false">
-        <property name="serviceItf" value="liuns.service.AddressService" />
+        <property name="serviceItf" value="liuns.interfacer.AddressService" />
         <property name="serviceObject">
             <bean class="liuns.service.impl.AddressServiceImpl" />
         </property>
@@ -31,7 +31,7 @@
         <property name="groupName" value="default" />
         <property name="workerThreads" value="10" />
         <property name="serverPort" value="8081" />
-        <property name="timeout" value="3000" />
+        <property name="timeout" value="10000" />
     </bean>
 
 </beans>

@@ -25,8 +25,8 @@ public class UserManageImplTest extends BaseTest {
     @Test
     public void update() {
         UserPO userUpdate = new UserPO();
-        userUpdate.setId(2L);
-        userUpdate.setUsername("username");
+        userUpdate.setId(2003L);
+        userUpdate.setUsername("刘宁");
         userUpdate.setPwd("pwd");
         userManage.insert(userUpdate);
         System.out.println("success..");

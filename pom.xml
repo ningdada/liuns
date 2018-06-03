@@ -18,6 +18,7 @@
         <module>liuns-utils</module>
         <module>liuns-soa</module>
         <module>liuns-demo</module>
+        <module>liuns-interface</module>
     </modules>
 
     <properties>

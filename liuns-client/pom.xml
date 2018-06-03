@@ -22,7 +22,12 @@
         <!-- module -->
         <dependency>
             <groupId>com.ndd</groupId>
-            <artifactId>liuns-model</artifactId>
+            <artifactId>liuns-interface</artifactId>
+            <version>${module.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ndd</groupId>
+            <artifactId>liuns-soa</artifactId>
             <version>${module.version}</version>
         </dependency>
 
@@ -33,6 +38,11 @@
             <version>${hessian.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>0.15</version>
+        </dependency>
 
     </dependencies>
 </project>

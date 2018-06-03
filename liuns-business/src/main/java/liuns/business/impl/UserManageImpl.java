@@ -18,7 +18,11 @@ public class UserManageImpl implements UserManage {
     @Transactional
     public long insert(UserPO user) {
         if (user == null) throw new NullPointerException();
-        return userDao.insert(user);
+        int result = userDao.insert(user);
+        if (result == 1) {
+            return user.getId();
+        }
+        return 0L;
     }
 
     @Transactional

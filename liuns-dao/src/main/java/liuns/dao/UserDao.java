@@ -10,7 +10,7 @@ public interface UserDao {
      * @param user
      * @return ID 用户id
      */
-    long insert(UserPO user);
+    int insert(UserPO user);
 
     /**
      * 根据id更新用户

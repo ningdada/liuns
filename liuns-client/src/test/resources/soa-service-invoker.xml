@@ -7,21 +7,21 @@
     <!-- 调用SOA服务的客户端列表 -->
 
     <!-- 用户 -->
-    <bean class="soa.RevokerFactoryBean" lazy-init="false">
-        <property name="tartgetInterface" value="liuns.remoting.framework.liuns.service.UserService" />
+    <bean id="userClient" class="liuns.remoting.framework.invoker.RevokerFactoryBean" lazy-init="false">
+        <property name="tartgetInterface" value="liuns.interfacer.UserService" />
         <property name="clusterStrategy" value="WeightRandom" />
-        <property name="remoteAppKey" value="liuns" />
+        <property name="remoteAppKey" value="liuns-default-user" />
         <property name="groupName" value="default" />
-        <property name="timeout" value="600" />
+        <property name="timeout" value="10000" />
     </bean>
 
     <!-- -->
-    <bean class="soa.RevokerFactoryBean" lazy-init="false">
-        <property name="tartgetInterface" value="liuns.remoting.framework.liuns.service.AddressService" />
+    <bean id="addressClient" class="liuns.remoting.framework.invoker.RevokerFactoryBean" lazy-init="false">
+        <property name="tartgetInterface" value="liuns.interfacer.AddressService" />
         <property name="clusterStrategy" value="WeightRandom" />
-        <property name="remoteAppKey" value="liuns" />
+        <property name="remoteAppKey" value="liuns-default-address" />
         <property name="groupName" value="default" />
-        <property name="timeout" value="600" />
+        <property name="timeout" value="10000" />
     </bean>
 
 </beans>
